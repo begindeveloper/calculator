@@ -1,5 +1,6 @@
 body {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -8,24 +9,58 @@ body {
 
 .calculator{
     background-color: midnightblue;
-    padding: 20px;
-    border-radius: 20px;
+    padding: 40px;
+    border-radius: 40px;
 }
 
-.screens{
+.screen{
     width: 224px;
+    background-color:powderblue;
+    font-size: 40px;
+    text-align: end;
+    padding: 4px;
 }
 
 .buttons {
-    width: 232px;
+    width: 250px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.buttons seven{
-    color: blue; 
-    font-size: large ;
-    
+#clear, #brackets, #percentage,
+#seven,#eight,#nine,#multiply,
+#four,#five,#six,#subtract,
+#one,#two,#three,#divide,
+#decimal,#zero,#equals,
+#add{
+    background-color: lavenderblush;
+    border: none;
+    color:rgb(10, 7, 5);
+    font-size: large;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    margin: 4px;
+}
+
+#clear:hover,#brackets:hover,#percentage:hover,
+#seven:hover,#eight:hover,#nine:hover,#multiply:hover,
+#four:hover,#five:hover,#six:hover,#subtract:hover,
+#one:hover,#two:hover,#three:hover,#divide:hover,
+#decimal:hover,#zero:hover,#equals:hover,#add:hover{
+    background-color: burlywood;
+}
+
+
+#clear:active,#brackets:active,#percentage:active,
+#seven:active,#eight:active,#nine:active,#multiply:active,
+#four:active,#five:active,#six:active,#subtract:active,
+#one:active,#two:active,#three:active,#divide:active,
+#decimal:active,#zero:active,#equals:active,#add:active{
+    background-color: lightsalmon;
 }
 
 
 
-}
+
+
