@@ -1,27 +1,27 @@
+// get elements
 const buttons = document.querySelectorAll('.buttons button');
 const screenDisplay = document.querySelector('.screen');
 
+let calculation = [] // display in an array
+let accumalativeCalculation
 
-// Add event listeners to the buttons
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      const buttonText = button.textContent;
+function calculate(button){
+   const value = button.textContent
+   // handle the button clicks
+   if (value === 'C'){ // clear the screen
+      calculation =[]
+      screenDisplay.textContent = '.'
+      return;
+    }else if (value === '=') { // evaluate the expression
+        console.log(accumalativeCalculation)
+        screenDisplay.textContent = eval(accumalativeCalculation)
+    }else{
+        calculation.push(value)
+        accumalativeCalculation = calculation.join('')
+        screenDisplay.textContent = accumalativeCalculation
+    }
 
-      // Handle button clicks
-    if (buttonText === '=') {
-        // Evaluate the expression
-        try {
-          const result = eval(screen.textContent);
-          screen.textContent = result;
-        } catch (error) {
-          screen.textContent = 'Error';
-        }
-      } else if (buttonText === 'C') {
-        // Clear the screen
-        screen.textContent = '';
-      } else {
-        // Append the clicked button's text to the screen
-        screen.textContent += buttonText;
-      }
-    });
-  });
+}
+// add event listner to the buttons
+buttons.forEach(button => button.addEventListener('click',
+ () => calculate(button)));
